@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card with Logos and About Us</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <style>
+    .footer a:hover {
+            color: #FFD700; /* Change color on hover */
+    }
+
+        /* Specific hover colors for each social media */
+        .footer a.instagram:hover {
+            color: #E1306C; /* Instagram Pink */
+        }
+        .footer a.linkedin:hover {
+            color: #0077B5; /* LinkedIn Blue */
+        }
+        .footer a.youtube:hover {
+            color: #FF0000; /* YouTube Red */
+        }
+        .footer a.whatsapp:hover {
+            color: #25D366; /* WhatsApp Green */
+        }
+    .contact-card {
+      width: 100%;
+      max-width: 800px;
+      margin: 40px auto;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      background-color: #fff;
+      transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
+
+    .contact-card.highlighted {
+      background-color: #f6f6f9fa; /* Light blue background when highlighted */
+    }
+    .contact-info {
+      padding-right: 20px;
+      
+      color: white; /* Ensures text is visible on the image */
+      border-radius: 10px;
+      position: relative;
+      overflow: hidden;
+      animation: moveBackground 5s linear infinite; /* Animation for the moving background */
+    }
+    .contact-info, .contact-form {
+      padding: 20px;
+    }
+    .contact-info h3, .contact-form h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    @keyframes moveBackground {
+      0% {
+        background-position: 0 0;
+      }
+      50% {
+        background-position: 50% 50%;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+    
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1.6px solid #598df4;
+      border-radius: 5px;
+      margin: 8px 0;
+    }
+    .contact-form button {
+      
+      padding: 12px;
+      background-color: hsl(208, 81%, 47%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: auto;
+      
+
+    }
+    .contact-form button:hover {
+      background-color: #40b810;
+    }
+
+        /* Left side contact info */
+        .contact-info {
+            padding-right: 20px;
+        }
+
+        .contact-info .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .contact-info .contact-item i {
+            font-size: 22px;
+            margin-right: 10px;
+            color: #1c84e0; /* Phone icon color */
+
+        }
+
+        .contact-info .contact-item span {
+            font-size: 16px;
+            color: #1c84e0; /* Phone icon color */
+
+        }
+
+        .contact-info .contact-item i.phone-icon {
+            color: #1c84e0; /* Phone icon color */
+        }
+
+        .contact-info .contact-item i.email-icon {
+             /* Email icon color */
+             color: #1c84e0; /* Phone icon color */
+            }
+
+    @media (max-width: 768px) {
+            .contact-card {
+                padding: 15px;
+            }
+
+            .contact-form h3 {
+                font-size: 20px;
+            }
+
+            .contact-info {
+                padding-right: 0;
+            }
+            
+
+            .contact-form .form-row {
+                flex-direction: column;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 14px;
+            }
+
+            .contact-form button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contact-card {
+                padding: 10px;
+            }
+
+            .contact-form h3 {
+                font-size: 18px;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                font-size: 12px;
+            }
+
+            .contact-form button {
+                font-size: 12px;
+            }
+        }
+  
+    .btn-custom {
+      background-color: white; /* White background */
+      color: rgb(23, 22, 23); /* Black text */
+      border-radius: 100px; /* Round edges */
+      height: 60px; /* Increased height */
+      font-size: 18px; /* Adjust font size */
+      padding: 15px 20px; /* Adjust padding to control button size */
+      border: 2px solid #5f5c5fee; /* Optional: to add a border around the button */
+      width: 100%;
+      display: flex;
+      width: 100%; /* Make buttons full-width on smaller devices */
+      padding: 15px; /* Add padding to make buttons larger */
+      font-size: 16px; /* Font size for text */
+      text-align: center; /* Align text centrally */
+      height: auto; /* Allow height to adjust based on content */
+       margin-bottom: 10px; /* Add space between buttons */
+      
+      
+    }
+    .btn-custom i {
+            margin-right: 10px; /* Space between icon and text */
+            font-size: 24px; /* Adjust icon size */
+        }
+    .btn-custom-fullwidth {
+      width: 100%; /* Make the button take the full width of its column */
+    }
+    .btn-custom span {
+            color: #090909;
+            font-size: 16px;
+        }
+        @media (max-width: 767px) 
+            .col-12 {
+                margin-bottom: 10px; /* Add space between buttons */
+            }
+        
+    .btn-custom:hover {
+      background-color: #ffffff; /* Light grey background on hover */
+      background-color: #ffffff; /* Light grey background on hover */
+    border-color: #e40fe4;
+      
+      color: hsl(240, 3%, 6%); /* Blue text on hover */
+      box-shadow: 0 10px 20px rgba(199, 171, 192, 0.88);
+  transform: translateY(-5px); /* Lift the card slightly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .nav-link {
+      color: hsl(0, 0%, 2%) !important;
+
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #3f5cf1 !important;
+    }
+    body, html {
+      height: 100%;
+      margin: 0;
+    }
+    /* Fixed Navbar with Custom Color */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #fafbfa; /* Custom color */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      font-size: 18px;
+    }
+    .navbar-brand {
+      color: #1b1919 !important;
+    }
+
+   
+    
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+      margin-top: 80px; /* Add margin to prevent content from being hidden under the fixed navbar */
+    }
+    /* Hover effect for cards */
+.card:hover {
+  /* Glow effect */
+  box-shadow: 0 10px 20px rgba(126, 145, 206, 0.88);
+  transform: translateY(-5px); /* Lift the card slightly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  
+}
+
+/* Adjust the hover effect on the rounded-card as well */
+.rounded-card:hover {
+  box-shadow: 0 10px 20px rgba(126, 145, 206, 0.88);  /* Glow effect */
+  transform: translateY(-5px); /* Lift the card slightly */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover .fa-icon {
+    color: #ffffff; /* Change icon color to white */
+  }
+
+    .card {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 30px;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 220px
+      
+    }
+    .card-img-top {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 20px 20px 0 0;
+    }
+    .card-body {
+      padding: 2rem;
+    }
+    .card-title {
+      font-size: 2rem;
+    }
+    .card-text {
+      font-size: 1.2rem;
+    }
+    .logos i {
+      font-size: 3rem;
+      margin-right: 15px;
+      color: #d60563ce;
+    }
+    .logos {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .rounded-card {
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 30px;
+      border-radius: 30px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .rounded-card .card-header {
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-align: center;
+      padding: 1rem;
+    }
+    .rounded-card .card-body {
+      padding: 2rem;
+    }
+    .btn-parrot-green {
+      background-color: #9b457d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+    .btn-parrot-green:hover {
+      background-color: #e89ed4;
+    }
+    .about-us-section {
+      margin-top: 30px;
+    }
+    .about-us-section h5 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .about-us-section .section-content {
+      font-size: 1rem;
+      color: #555;
+      margin-top: 10px;
+    }
+    .about-us-section .logos {
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .row-custom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    
+    .college-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      gap: 20px;
+    }
+    .college-logos img {
+      width: 200px;
+      height: 90px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+    .left-image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+    .left-image-container {
+      flex: 1;
+      max-width: 300px;
+      margin-right: 20px;
+    }
+    heading-with-lines {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      font-size: 24px;
+      position: relative;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+    }
+
+    .heading-with-line::before,
+    .heading-with-line::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 45%;
+      border-top: 2px solid black; /* Solid line */
+    }
+    heading-with-line::before {
+      left: 0;
+      margin-top: -1px; /* Adjust vertical alignment */
+    }
+
+    .heading-with-line::after {
+      right: 0;
+      margin-top: -1px; /* Adjust vertical alignment */
+    }.footer {
+            background-color: #fff;
+            color: rgb(239, 7, 7);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer i {
+            font-size: 30px;
+            margin: 0 20px;
+        }
+        .footer a {
+            color: #1e1b1b;
+            text-decoration: none;
+        }
+        
+        
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-startup">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services-new">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#certificates-new">Certificates</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#features-new">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact-new">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Card Container -->
+<div class="card-container">
+
+  <!-- New Card with All Rounded Corners (above College Logos Card) -->
+  <div class="card rounded-card">
+    <div class="card-header">
+      <h5>Our Vision</h5>
+    </div>
+    <div class="card-body">
+      <p>At the heart of our mission lies a commitment to pioneering technological solutions that push 
+         boundaries and inspire innovation. We’re dedicated to empowering creativity, building tools, 
+         and crafting solutions that redefine what’s possible in the tech industry. 
+          Join us as we forge a path toward a smarter, more inventive tomorrow.
+
+
+      </p>
+      <a href="#about-startup" class="btn btn-parrot-green">Get Started</a>
+    </div>
+  </div>
+
+  <!-- Logos Card with Marquee -->
+  <div class="card" style="background-color:rgba(255, 255, 255, 0.88) ;">
+    <div class="card-body">
+      <h5 class="card-title" style="color: rgb(242, 6, 151);">Our  Collaborators</h5>
+      
+        <div class="college-logos">
+          <marquee behavior="" direction="">
+          <img src="1.png" alt="KL College Logo">
+          <img src="2.png" alt="Shastra College Logo">
+          <img src="5.jpg" alt="Intel College Logo">
+          <img src="intel.jpg" alt="intel">
+        </marquee>
+        </div>
+     
+    
+    </div>
+  </div>
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="intern9.png" class="d-block w-100" alt="..." style="height: 400px; object-fit: contain;">
+      </div>
+      <div class="carousel-item">
+        <img src="intern8.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: contain;">
+      </div>
+      <div class="carousel-item">
+        <img src="intern3.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: contain;">
+      </div>
+      <div class="carousel-item">
+        <img src="intern6.png" class="d-block w-100" alt="..." style="height: 400px; object-fit: contain;">
+      </div>
+      <div class="carousel-item">
+        <img src="intern7.jpg" class="d-block w-100" alt="..." style="height: 400px; object-fit: contain;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </button>
+  </div>
+  
+  <br><br>
+  <!-- About Us Startup Card with Detailed Sections -->
+ <div class="card" id="about-startup">
+  <div class="card-body">
+    <h5 class="card-title" style="color: #8f19b6;">About the Startup</h5>
+    <p class="card-text">We are a growing startup focused on developing innovative tech solutions. We offer internship opportunities for aspiring developers and provide hands-on experience working on real-world projects. Join us to explore new technologies and enhance your career in the tech industry.</p>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-briefcase" style="font-size: 24px; color: #e8639a;"></i>
+        </div>
+        <h5>Internships</h5>
+        <p>We offer internships in various domains like software development, data science, and AI. Get the chance to work on real-world projects and gain industry experience.</p>
+      </div>
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-cogs" style="font-size: 24px; color: #ec7927;"></i>
+        </div>
+        <h5>Projects</h5>
+        <p>We encourage interns to work on innovative projects, helping them build their portfolios while learning and contributing to meaningful developments.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-certificate" style="font-size: 24px; color: #04e36c;"></i>
+        </div>
+        <h5>Certifications</h5>
+        <p>We provide industry-recognized certifications for successful completion of internships and projects, helping interns add value to their resumes.</p>
+      </div>
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-laptop" style="font-size: 24px; color: #06038b;"></i>
+        </div>
+        <h5>Training and Deployment</h5>
+        <p>Our training programs focus on equipping you with the skills needed to succeed in the industry. From basics to advanced concepts, we cover it all.</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-users" style="font-size: 24px; color: #6a0520;"></i>
+        </div>
+        <h5>Hackathons & Workshops</h5>
+        <p>We organize hackathons and workshops to foster innovation, encourage team collaboration, and help you develop hands-on problem-solving skills.</p>
+      </div>
+      <div class="col-md-6 col-sm-12 mb-4">
+        <div class="logos">
+          <i class="fas fa-graduation-cap" style="font-size: 24px; color: #bd0533;"></i>
+        </div>
+        <h5>Placement Training</h5>
+        <p>We provide placement training to help you prepare for job interviews, covering aptitude, technical skills, and soft skills to enhance your employability.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+<div class="container">
+  <div class="row">
+    <!-- Project Logo -->
+    <div class="col-md-4 col-sm-12 mb-3">
+      <h4>
+        <i class="fas fa-tasks" style="font-size: 2rem; color: #fa0186; margin-right: 10px;"></i>
+        &nbsp;Projects
+      </h4>
+      <p style="word-wrap: break-word; overflow-wrap: break-word;">
+        <span style="font-size: 30px;"><span id="num1"></span>+</span>
+        people have joined this exciting project, contributing to its success.
+      </p>
+    </div>
+
+    <!-- Project Heading and Count -->
+    <div class="col-md-4 col-sm-12 mb-3">
+      <h4>
+        <i class="fa-solid fa-user" style="font-size: 2rem; color: #077330; margin-right: 10px;"></i>
+        &nbsp;Clients
+      </h4>
+      <p style="word-wrap: break-word; overflow-wrap: break-word;">
+        <span style="font-size: 30px;"><span id="num2"></span>+</span>
+        Clients have partnered with us to achieve mutual success.
+      </p>
+    </div>
+
+    <!-- Internship Section -->
+    <div class="col-md-4 col-sm-12 mb-3">
+      <h4>
+        <i class="fas fa-user-graduate" style="font-size: 2rem; color: #923308; margin-right: 10px;"></i>
+        &nbsp;Internship
+      </h4>
+      <p style="word-wrap: break-word; overflow-wrap: break-word;">
+        <span style="font-size: 30px;"><span id="num3"></span>+</span>
+        people have joined this internship, gaining valuable hands-on experience and enhancing their professional growth.
+      </p>
+    </div>
+  </div>
+</div>
+
+<br><br>
+<h2 class="heading-with-lines" id="services-new" style="text-align: center; display: flex; align-items: center; justify-content: center; font-size: 36px;color: #1120a7;">
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-right: 10px;"></i> 
+  Services
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-left: 10px;"></i>
+</h2><br><br>
+<div class="container">
+  <div class="row">
+    
+    <!-- Web Development -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-laptop-code" style="font-size: 24px; color: #4CAF50; margin-right: 10px;"></i> 
+            Web Development
+          </h5>
+          <p class="card-text">Build responsive, modern websites with HTML, CSS, JavaScript, and frameworks like React and Angular for an engaging online presence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-comments" style="font-size: 24px; color: #FF9800; margin-right: 10px;"></i> 
+            Soft Skills
+          </h5>
+          <p class="card-text">Enhance your communication, teamwork, and leadership skills to succeed in any professional setting with confidence.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Technical Training -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-cogs" style="font-size: 24px; color: #f80269f8; margin-right: 10px;"></i> 
+            Technical Training
+          </h5>
+          <p class="card-text">Gain hands-on experience with the latest technology and tools through intensive training programs.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Development -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-mobile-alt" style="font-size: 24px; color: #a6dc7d; margin-right: 10px;"></i> 
+            App Development
+          </h5>
+          <p class="card-text">Create dynamic and user-friendly mobile applications for Android and iOS using popular development platforms.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & ML Projects -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-robot" style="font-size: 24px; color: #009688; margin-right: 10px;"></i> 
+            AI&nbsp; ML & IOT Projects
+          </h5>
+          <p class="card-text">Explore real-world AI and ML projects to develop predictive and intelligent systems. Work on AI and ML projects to create smarter, data-driven solutions for real-world challenges.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aptitude and Reasoning -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="transition: background-color 0.3s, color 0.3s; cursor: pointer;" 
+           onmouseover="this.style.backgroundColor='#1b0a52'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#000000';">
+        <div class="card-body">
+          <h5 class="card-title">
+            <i class="fa-solid fa-brain" style="font-size: 24px; color: #b7623a; margin-right: 10px;"></i> 
+            Aptitude and Reasoning
+          </h5>
+          <p class="card-text">Sharpen your problem-solving skills and logical reasoning with engaging exercises and practice tests.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<br><br>
+<h2 class="heading-with-lines" id="certificates-new" style="text-align: center; display: flex; align-items: center; justify-content: center; font-size: 36px;color: #1120a7;">
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-right: 10px;"></i> 
+  Certificates
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-left: 10px;"></i>
+</h2><br><br>
+<div class="container">
+  <div class="row">
+    <!-- First Card -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="width: 100%;">
+        <img src="9.webp" alt="Image 9" style="width: 100%; transition: transform 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.5)';" 
+             onmouseout="this.style.transform='scale(1)';">
+      </div>
+    </div>
+    
+    <!-- Second Card -->
+    <div class="col-sm-12 col-md-6">
+      <div class="card" style="width: 100%;">
+        <img src="8.jpg" alt="Image 8" style="width: 100%; transition: transform 0.3s ease;" 
+             onmouseover="this.style.transform='scale(1.5)';" 
+             onmouseout="this.style.transform='scale(1)';">
+      </div>
+    </div>
+  </div>
+</div>
+
+ <br><br>
+<h2 class="heading-with-lines" id="features-new" style="text-align: center; display: flex; align-items: center; justify-content: center; font-size: 36px;color: #1120a7;">
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-right: 10px;"></i> 
+  Features
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-left: 10px;"></i>
+</h2><br><br>
+<div class="container">
+  <div class="row">
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-laptop" style="color: #1120a7;"></i>
+              <span>Live Training</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-cloud" style="color: #bf5031;"></i>
+              <span>Cloud Computing Services</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-brands fa-apple" style="color: #860a37;"></i>
+              <span>Mobile App Development</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-code" style="color: #0d488c;"></i>
+              <span>UI/UX Design Solutions</span>
+          </button>
+      </div>
+  </div><br>
+  <div class="row">
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-diagram-project" style="color: #6e7904;"></i>
+              <span>Projects</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-brands fa-flutter" style="color: #079307;"></i>
+              <span>Flutter</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-window-restore" style="color: #670616;"></i>
+              <span>EV Technology</span>
+          </button>
+      </div>
+      <div class="col-12 col-sm-6 col-md-3">
+          <button type="button" class="btn btn-custom btn-lg">
+              <i class="fa-solid fa-gear" style="color: #baf608;"></i>
+              <span>Quality Assurance and Testing</span>
+          </button>
+      </div>
+  </div>
+</div>
+<br><br>
+<h2 class="heading-with-lines" id="contact-new" style="text-align: center; display: flex; align-items: center; justify-content: center; font-size: 36px;color: #1120a7;">
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-right: 10px;"></i> 
+  Contact Us
+  <i class="fa-solid fa-window-minimize" style="font-size: 24px; margin-left: 10px;"></i>
+</h2><br>
+<div class="container">
+  <div class="contact-card card" onclick="highlightCard(this)">
+    <div class="row">
+      <!-- Left side: Contact Info -->
+      <div class="col-md-6 contact-info">
+        <h5 style="font-size: 18px; margin-bottom: 15px; color: #ec0f0f;">What we offer?</h5>
+<p style="font-size: 16px; color: #555;">We are a dynamic startup company offering valuable internships, hands-on projects, and opportunities to gain real-world experience in various fields.</p>
+
+
+        <h5 style="font-size: 18px; margin-bottom: 15px; color: #ec0f0f;">For queries or doubts related to internships or projects, please contact:</h5>
+        
+        <div class="contact-item">
+            <i class="fas fa-map-marker-alt" style="font-size: 22px; color: hsl(210, 73%, 49%);"></i>
+            <span style="font-size: 16px; color: #555;">Andhra Pradesh , India </span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-phone" style="font-size: 22px; color: hsl(210, 73%, 49%);"></i>
+            <span style="font-size: 16px; color: #555;">7036221064</span>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope" style="font-size: 22px; color:hsl(210, 73%, 49%);"></i>
+            <span style="font-size: 16px; color: #555;">kreativekuantum@gmail.com</span>
+        </div>
+      </div>
+
+      <!-- Right side: Contact Form -->
+      <div class="col-md-6 contact-form">
+        <h3 style="font-size: 24px; color: hsl(0, 87%, 51%); text-align: center; margin-bottom: 20px;">Send a Message</h3>
+
+        <form action="send.php" method="POST">
+          <div class="form-row">
+            <div class="col-12 col-sm-6">
+              <input type="text" name="name" placeholder="Your Name" required class="form-control">
+            </div>
+            <div class="col-12 col-sm-6">
+              <input type="email" name="email" placeholder="Your Email" required class="form-control">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="col-12 col-sm-6">
+              <input type="text" name="subject" placeholder="Subject" required class="form-control">
+            </div>
+            <div class="col-12 col-sm-6">
+              <textarea name="message" placeholder="Your Message" rows="4" required class="form-control"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<br><br>
+<script>
+  // Function to highlight the card when clicked
+  function highlightCard(card) {
+    card.classList.toggle('highlighted');
+  }
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://kit.fontawesome.com/ea4f812ebc.js" crossorigin="anonymous"></script>
+<script>
+  function animateCount(id, target) {
+    let currentNumber = 0;
+    const interval = setInterval(() => {
+      currentNumber += Math.floor(Math.random() * 5) + 1; // Increase the number by a random value
+      if (currentNumber >= target) {
+        currentNumber = target; // Ensure it doesn't exceed the target
+        clearInterval(interval);
+      }
+      document.getElementById(id).textContent = currentNumber;
+    }, 50); // The number will change every 50ms
+  }
+
+  // Start the animation for all counters
+  animateCount('num1', 100);
+  animateCount('num2', 10);
+  animateCount('num3', 200);
+</script>
+<div class="footer">
+  <a href="https://www.instagram.com/kreative_kuantum?utm_source=qr&igsh=MWxmOHdteGxlcWt6cw%3D%3D" target="_blank" class="instagram">
+      <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/yourusername" target="_blank" class="linkedin">
+      <i class="fab fa-linkedin"></i>
+  </a>
+  <a href="https://www.youtube.com/c/yourchannel" target="_blank" class="youtube">
+      <i class="fab fa-youtube"></i>
+  </a>
+  <a href="https://wa.me/yourphonenumber" target="_blank" class="whatsapp">
+      <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+</body>
+</html>
